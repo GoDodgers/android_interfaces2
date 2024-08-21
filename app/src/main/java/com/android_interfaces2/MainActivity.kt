@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -25,6 +26,7 @@ import androidx.compose.material.icons.filled.Inbox
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Save
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.Accessibility
 import androidx.compose.material.icons.outlined.AccessibilityNew
 import androidx.compose.material.icons.outlined.AccountBalance
 import androidx.compose.material.icons.outlined.Android
@@ -54,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.android_interfaces2.ui.theme.Android_interfaces2Theme
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 
 
 class MainActivity : ComponentActivity() {
@@ -146,7 +149,7 @@ fun InterestPage() {
     }
 }
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "InvalidColorHexValue")
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
@@ -155,6 +158,7 @@ fun InterestPagePreview() {
         modifier = Modifier.fillMaxSize(),
         topBar = {
             CenterAlignedTopAppBar(
+                modifier = Modifier.height(80.dp),
                 title = {
                     Text(
                         "Interests",
@@ -212,11 +216,9 @@ fun InterestPagePreview() {
             }
         }
     ) {  paddingValues ->
-
-        var interests = mutableListOf("")
         Column (
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize().padding(paddingValues),
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row (
@@ -224,10 +226,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(Icons.Outlined.AccessibilityNew, contentDescription = "accessibiility")
+                Icon(
+                    Icons.Outlined.Accessibility,
+                    "accessibiility",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
             Row (
@@ -235,10 +246,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(Icons.Outlined.AccountBalance, contentDescription = "account balance")
+                Icon(
+                    Icons.Outlined.AccountBalance,
+                    "account balance",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp)
+                    )
                 }
             }
             Row (
@@ -246,10 +266,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.Android, contentDescription = "android")
+                Icon(
+                    Icons.Outlined.Android,
+                    "android",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
             Row (
@@ -257,10 +286,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.AssistWalker, contentDescription = "assist")
+                Icon(
+                    Icons.Outlined.AssistWalker,
+                    "assist",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp)
+                    )
                 }
             }
             Row (
@@ -268,10 +306,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.Bedtime, contentDescription = "bedtime")
+                Icon(
+                    Icons.Outlined.Bedtime,
+                    "bedtime",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
             Row (
@@ -279,10 +326,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.CurrencyBitcoin, contentDescription = "crypto")
+                Icon(
+                    Icons.Outlined.CurrencyBitcoin,
+                    "crypto",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
             Row (
@@ -290,10 +346,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.Coffee, contentDescription = "coffee")
+                Icon(
+                    Icons.Outlined.Coffee,
+                    "coffee",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
             Row (
@@ -301,10 +366,19 @@ fun InterestPagePreview() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(imageVector = Icons.Outlined.LocalAirport, contentDescription = "airport")
+                Icon(
+                    Icons.Outlined.LocalAirport,
+                    "airport",
+                    modifier = Modifier.size(64.dp),
+                    tint = Color(0xFFFA96FA)
+                )
                 Text("Something")
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Rounded.CheckCircleOutline, contentDescription = "check")
+                    Icon(
+                        Icons.Rounded.CheckCircleOutline,
+                        "check",
+                        modifier = Modifier.size(64.dp),
+                    )
                 }
             }
         }
